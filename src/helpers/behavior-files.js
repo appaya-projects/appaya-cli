@@ -12,7 +12,7 @@ export class ${name} extends Behavior {
 function extendBehaviorFile(name, extendsFrom) {
     return `import { ${extendsFrom} } from "@appaya/behavior/list";
 
-export class ${name}Behavior extends ${extendsFrom} {
+export class ${name} extends ${extendsFrom} {
     
 }
 `;
