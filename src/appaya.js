@@ -166,17 +166,21 @@ Timber::render($template, $data );
     async addBehaviorFile(name, extendsFrom = 'Behavior') {
         let filePath = './src/scripts/',
             listFileName = 'main.ts',
+            className = name
+                .replace(/\s+/g, '')
+                + 'Behavior',
             fileName = name
                 .toLowerCase()
                 .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
                 .replace(/\s+/g, '-') // collapse whitespace and replace by -
-                .replace(/-+/g, '-'); // collapse dashes;
+                .replace(/-+/g, '-') // collapse dashes;
+                + '.behavior';
 
 
         let listFile = fs.readFileSync(filePath + listFileName);
 
         let scriptsParser = require('./helpers/scripts-file-parser');
-        const output = await scriptsParser.parse(filePath + listFileName, name, fileName);
+        const output = await scriptsParser.parse(filePath + listFileName, className, fileName);
 
         fs.writeFileSync(filePath + listFileName, output);
 
@@ -184,9 +188,9 @@ Timber::render($template, $data );
         const b = require('./helpers/behavior-files');
 
         if (extendsFrom == 'Behavior') {
-            fs.writeFileSync(`${filePath}/behaviors/${fileName}.ts`, b.behaviorFile(name));
+            fs.writeFileSync(`${filePath}/behaviors/${fileName}.ts`, b.behaviorFile(className));
         } else {
-            fs.writeFileSync(`${filePath}/behaviors/${fileName}.ts`, b.extendBehaviorFile(name, extendsFrom));
+            fs.writeFileSync(`${filePath}/behaviors/${fileName}.ts`, b.extendBehaviorFile(className, extendsFrom));
         }
 
 
