@@ -23,6 +23,7 @@ appaya --help
 appaya new
 ```
 Komenda ta przeprowadzi cię przez proces instalacji pytając m. in. o typ projektu, nazwę etc. 
+
 Więcej o typach projektu w sekcji [Project Types](#project-types)
 
 **Note:** projekt zostanie utworzony w aktualnym folderze i wymagane jest by był on pusty.
@@ -45,13 +46,18 @@ appaya watch
 ## Generowanie plików
 Appaya CLI posiada podstawowe komendy generujące pliki `.scss`, `.ts` itd.
 ```bash
-# tworzenie pliku '_my-component.scss', w folderze 'components' oraz dodanie jego importu w pliku '__components.scss'
+# tworzenie pliku '_my-component.scss', w folderze 'components' 
+# oraz dodanie jego importu w pliku '__components.scss'
 appaya style component "My Component"
 
-# tworzenie pliku 'my-custom.behavior.ts' w folderze `behaviors` z początkową klasą dziedziczącą po 'AjaxFormBehavior' oraz dodanie klasy do listy 'Behaviors'
+# tworzenie pliku 'my-custom.behavior.ts' w folderze `behaviors` z 
+# początkową klasą dziedziczącą po 'AjaxFormBehavior' oraz dodanie 
+# klasy do listy 'Behaviors'
 appaya behavior "My Custom" AjaxFormBehavior
 
-# tworzenie pliku `page-custom.twig` z dziedziczonym szablonem oraz `template-custom.php` odpowiedzialny za stworzenie `template` wordpressa. 
+# tworzenie pliku `page-custom.twig` z dziedziczonym szablonem 
+# oraz `template-custom.php` odpowiedzialny za stworzenie 
+# `template` wordpressa. 
 appaya timber-page "Custom"
 
 ```
@@ -71,8 +77,8 @@ Komenda | Plik | Referencja
 ### Wszystkie możliwości `appaya behavior`:
 Komenda | Opis 
 --- | --- 
-`appaya behavior "My Behavior"` | Stworzenie nowej klasy, która dziedziczy `Behavior`
-`appaya behavior "My Behavior" AjaxFormBehavior` | Stworzenie nowej klasy, która dziedziczy `AjaxFormBehavior`
+`appaya behavior "My Custom"` | Stworzenie nowej klasy, która dziedziczy `Behavior`
+`appaya behavior "My Custom" AjaxFormBehavior` | Stworzenie nowej klasy, która dziedziczy `AjaxFormBehavior`
 
 **Note:** wiecej o Appaya Behaviors możesz przeczytać tutaj: [Coś tam]('https://todo.todo')
 
@@ -89,7 +95,7 @@ Aktualnie dostępne są dwa projekty.
 
 Nazwa | Krótki opis
 --- | ---
-[lp-boilerplate](https://github.com/appaya-projects/appaya-lp-boilerplate) | W pełni skonfigurowany projekt, który idealnie nadaje się do tworzenia LP.
+[lp-boilerplate](https://github.com/appaya-projects/appaya-lp-boilerplate) | Projekt specjalnie stworzony jako baza dla LP.
 [timber-theme](https://github.com/appaya-projects/appaya-timber-theme) | Startowy szablon wordpressa dla developerów. Based on [Timber](https://github.com/timber/timber), 
 
 

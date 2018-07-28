@@ -1,10 +1,11 @@
 {
   "name": "@appaya/cli",
-  "version": "0.0.2",
-  "description": "",
+  "version": "0.0.3",
+  "description": "CLI that's help to work with Appaya products.",
   "main": "index.js",
+  "repository": "https://github.com/appaya-projects/appaya-cli",
   "scripts": {},
-  "author": "",
+  "author": "Mateusz Szmytko (@Raa)",
   "bin": {
     "appaya": "./index.js"
   },
@@ -12,9 +13,7 @@
   "dependencies": {
     "autoprefixer": "^9.0.1",
     "awesome-typescript-loader": "^5.2.0",
-    "cli-config": "^0.4.2",
     "commander": "^2.16.0",
-    "config.json": "^0.0.4",
     "css-loader": "^1.0.0",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
