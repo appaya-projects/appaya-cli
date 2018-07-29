@@ -62,7 +62,7 @@ appaya page "Custom"
 
 Appaya CLI will add reference for each file created
 
-### Commands for `appaya style`:
+### Args for `appaya style`:
 Command | File | Reference
 --- | --- | ---
 `appaya style component "My Component"` | `_my-component.scss` | `__components.scss`
@@ -70,17 +70,17 @@ Command | File | Reference
 `appaya style page "My Page"` | `_my-page.scss` | `__pages.scss`
 `appaya style util "My Util"` | `_my-component.scss` | `__utils.scss`
 
-**Note:** More about styles you can find here
+**Note:** More about styles you can find here [todo]
 
-### Commands for `appaya behavior`:
+### Args for `appaya behavior`:
 Command | Description 
 --- | --- 
 `appaya behavior "My Custom"` | Create new class, which inhert `Behavior`
 `appaya behavior "My Custom" AjaxFormBehavior` | Create new class, which inhert `AjaxFormBehavior`
 
-**Note:** More about Appaya Behaviors you can find here: [Coś tam]('https://todo.todo')
+**Note:** More about Appaya Behaviors you can find here: [todo]
 
-### Commands for `appaya page`:
+### Args for `appaya page`:
 Command | Page | Wordpress template
 --- | --- | ---
 `appaya page "My Custom"` | `page-my-custom.twig` | `template-my-custom.php`
