@@ -1,5 +1,5 @@
 const webpackMerge = require('webpack-merge'),
-  commonConfig = require('./webpack.comm.js'),
+  commonConfig = require('./webpack.base.js'),
   path = require('path'),
   MiniCssExtractPlugin = require("mini-css-extract-plugin"),
   autoprefixer = require('autoprefixer'),
@@ -63,4 +63,3 @@ module.exports = webpackMerge(commonConfig, {
     })
   ]
 });
-

@@ -1,27 +1,24 @@
-const fs = require('fs');
+const PathResolver = require('../helpers/path-resolver');
+const titleParse = require('../helpers/title-parse');
 const path = require('path');
+const fs = require('fs');
 
-class Config {
+class SettingsManager {
+
+    get settings() {
+        return this.data;
+    }
+
     constructor(fileName = 'appaya-cli.json') {
         this.fileName = fileName;
 
         this.data = {};
     }
 
-
-
-    get(id) {
-        return this.data[id];
-    }
-
-    set(id, value) {
-        this.data[id] = value;
-    }
-
     load() {
         try {
             const data = JSON.parse(fs.readFileSync(this.fileName));
-
+            
             for (let a in data) {
                 if (this.data[a] == undefined) {
                     this.data[a] = data[a];
@@ -42,15 +39,11 @@ class Config {
         const Inquirer = require('inquirer');
 
         let answers = await Inquirer.prompt([
-            { type: 'input', name: 'name', message: 'Enter project name: ' },
+            { type: 'input', name: 'name', message: 'Enter project name: ', default: path.basename(PathResolver.project()) },
             { type: 'list', name: 'type', message: 'Choose project type', choices: ['lp-boilerplate', 'timber-theme'] }
         ])
 
-        answers.slug = answers.name
-            .toLowerCase()
-            .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
-            .replace(/\s+/g, '-') // collapse whitespace and replace by -
-            .replace(/-+/g, '-'); // collapse dashes;
+        answers.slug = titleParse(answers.name);
 
         for (let a in answers) {
             this.data[a] = answers[a];
@@ -58,4 +51,4 @@ class Config {
     }
 }
 
-module.exports = Config;
+module.exports = SettingsManager;

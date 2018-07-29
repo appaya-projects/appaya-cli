@@ -1,7 +1,5 @@
 const webpackMerge = require('webpack-merge'),
-	commonConfig = require('./webpack.comm.js'),
-	MiniCssExtractPlugin = require("mini-css-extract-plugin"),
-	path = require('path');
+	commonConfig = require('./webpack.base.js');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'development';
 
@@ -19,6 +17,8 @@ module.exports = webpackMerge(commonConfig, {
 	serve: {
 		clipboard: false,
 		logLevel: 'error',
+		mode: ENV,
+		open: true,
 		dev: {
 			publicPath: "/",
 			logLevel: 'error'

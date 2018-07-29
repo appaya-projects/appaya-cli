@@ -58,7 +58,7 @@ appaya behavior "My Custom" AjaxFormBehavior
 # tworzenie pliku `page-custom.twig` z dziedziczonym szablonem 
 # oraz `template-custom.php` odpowiedzialny za stworzenie 
 # `template` wordpressa. 
-appaya timber-page "Custom"
+appaya page "Custom"
 
 ```
 
@@ -82,10 +82,10 @@ Komenda | Opis
 
 **Note:** wiecej o Appaya Behaviors możesz przeczytać tutaj: [Coś tam]('https://todo.todo')
 
-### Wszystkie możliwości `appaya timber-page`:
+### Wszystkie możliwości `appaya page`:
 Komenda | Page | Wordpress template
 --- | --- | ---
-`appaya timber-page "My Custom"` | `page-my-custom.twig` | `template-my-custom.php`
+`appaya page "My Custom"` | `page-my-custom.twig` | `template-my-custom.php`
 
 
 **Note:** Komenda dostępna tylko dla typu projektu `timber-theme`.

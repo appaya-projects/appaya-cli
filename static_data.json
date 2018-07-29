@@ -1,0 +1,14 @@
+{
+    "projects": {
+        "lp-boilerplate": {
+            "url": "https://github.com/appaya-projects/appaya-lp-boilerplate.git"
+        },
+        "timber-theme": {
+            "url": "https://github.com/appaya-projects/appaya-timber-theme.git"
+        }
+    },
+    "configs": {
+        "prod": "./configs/webpack.prod.js",
+        "dev": "./configs/webpack.dev.js"
+    }
+}
