@@ -1,5 +1,5 @@
 # Appaya CLI
-Appaya CLI is a tool that connects products of Appaya. Making work easier and faster by creating projects faster, starting developer server and building project
+Appaya CLI is a tool that connects all products of Appaya. Making work easier  by creating projects faster, starting developer server and building project.
 
 ## Instalation
 ```
