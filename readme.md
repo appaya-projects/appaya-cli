@@ -70,7 +70,7 @@ Command | File | Reference
 `appaya style page "My Page"` | `_my-page.scss` | `__pages.scss`
 `appaya style util "My Util"` | `_my-component.scss` | `__utils.scss`
 
-**Note:** wiecej o układzie stylii w projektach Appayi możesz przeczytać tutaj: [Coś tam]('https://todo.todo')
+**Note:** More about styles you can find here
 
 ### Commands for `appaya behavior`:
 Command | Description 
@@ -78,7 +78,7 @@ Command | Description
 `appaya behavior "My Custom"` | Create new class, which inhert `Behavior`
 `appaya behavior "My Custom" AjaxFormBehavior` | Create new class, which inhert `AjaxFormBehavior`
 
-**Note:** You can check more about Appaya Behaviors here: [Coś tam]('https://todo.todo')
+**Note:** More about Appaya Behaviors you can find here: [Coś tam]('https://todo.todo')
 
 ### Commands for `appaya page`:
 Command | Page | Wordpress template
