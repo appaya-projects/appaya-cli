@@ -9,7 +9,7 @@ class AppManager {
 
     init() {
         this.app
-            .version('0.0.1')
+            .version('0.0.4')
             .description('Command Line Interface for appaya\'s projects.')
             
         for(let data of this.list) {

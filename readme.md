@@ -50,11 +50,11 @@ Appaya CLI has basic functions generating `.scss`, `.ts` etc.
 appaya style component "My Component"
 
 # will create 'my-custom.behavior.ts' in `behaviors` folder,
-# with initial inheriting class after 'AjaxFormBehavior'
+# with class that extends from 'AjaxFormBehavior'
 # also adding class to 'Behaviors' list.
 appaya behavior "My Custom" AjaxFormBehavior
 
-# will create `page-custom.twig` with inherting template.
+# will create `page-custom.twig` with initial code.
 # also `template-custom.php` responsible for creating wordpress `template` 
 appaya page "Custom"
 
