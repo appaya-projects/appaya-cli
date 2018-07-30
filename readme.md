@@ -50,7 +50,7 @@ Appaya CLI has basic functions generating `.scss`, `.ts` etc.
 appaya style component "My Component"
 
 # will create 'my-custom.behavior.ts' in `behaviors` folder,
-# with class that extends from 'AjaxFormBehavior'
+# with class that extends 'AjaxFormBehavior'
 # also adding class to 'Behaviors' list.
 appaya behavior "My Custom" AjaxFormBehavior
 
@@ -75,8 +75,8 @@ Command | File | Reference
 ### Args for `appaya behavior`:
 Command | Description 
 --- | --- 
-`appaya behavior "My Custom"` | Create new class, which inhert `Behavior`
-`appaya behavior "My Custom" AjaxFormBehavior` | Create new class, which inhert `AjaxFormBehavior`
+`appaya behavior "My Custom"` | Create new class, which extends `Behavior`
+`appaya behavior "My Custom" AjaxFormBehavior` | Create new class, which extends `AjaxFormBehavior`
 
 **Note:** More about Appaya Behaviors you can find here: [todo]
 
@@ -89,7 +89,7 @@ Command | Page | Wordpress template
 **Note:** Only avalible for `timber-theme`project.
 
 ## Project types
-Only two types are avalible for now.
+There are two types are avalible for now.
 
 Name | Description
 --- | ---
