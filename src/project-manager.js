@@ -68,6 +68,10 @@ class ProjectManager {
         this.project.page(name);
     }
 
+    styleBuilder(fileName) {
+        this.project.styleBuilder(fileName);
+    }
+
 
 
 }

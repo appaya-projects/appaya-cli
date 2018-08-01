@@ -45,6 +45,9 @@ appaya watch
 ## File generation
 Appaya CLI has basic functions generating `.scss`, `.ts` etc.
 ```bash
+# will create style files based on all *.html/*.twig files
+appaya style-builder
+
 # will create '_my-component.scss', in 'components' folder.
 # also adding import in '__components.scss'
 appaya style component "My Component"
@@ -61,6 +64,9 @@ appaya page "Custom"
 ```
 
 Appaya CLI will add reference for each file created
+
+
+
 
 ### Args for `appaya style`:
 Command | File | Reference
@@ -87,6 +93,53 @@ Command | Page | Wordpress template
 
 
 **Note:** Only avalible for `timber-theme`project.
+
+### Example `appaya style-builder` usage:
+With `./src/index.html` file
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <main class="p-index__main">
+    <h1 class="o-heading">My heading</h1>
+    <form action="#" class="c-form">
+      <div class="c-form__group">
+        // ...
+      </div>
+      <div class="c-form__group">
+        // ...
+      </div>
+      <div class="c-form__group">
+        // ...
+      </div>
+
+      <button class="o-btn">Send</button>
+    </form>
+  </main>
+</body>
+
+</html>
+```
+`appaya style-builder` will output:
+```bash
+'_form.scss' file created in './src/styles/components'
+'.c-form' added in './src/styles/components/_form.scss'
+'.c-form__group' added in './src/styles/components/_form.scss'
+'_heading.scss' file created in './src/styles/objects'
+'.o-heading' added in './src/styles/objects/_heading.scss'
+'_btn.scss' file created in './src/styles/objects'
+'.o-btn' added in './src/styles/objects/_btn.scss'
+'_index.scss' file created in './src/styles/pages'
+'.p-index__main' added in './src/styles/pages/_index.scss'
+```
 
 ## Project types
 There are two types are avalible for now.

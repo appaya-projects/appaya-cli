@@ -5,6 +5,7 @@ const fs = lazyRequire('fs');
 
 const Project = require('./project');
 const pageGenerator = require('../functions/page-generator');
+const filesInDir = require('../../helpers/files-in-dir');
 
 class ProjectTT /*Project Timber-Theme*/ extends Project {
 
@@ -37,6 +38,20 @@ class ProjectTT /*Project Timber-Theme*/ extends Project {
     // commands
     page(name) {
         pageGenerator(name);
+    }
+
+    styleBuilder() {
+        const files = filesInDir('./views/', '.twig');
+        if (!files) {
+            return;
+        }
+        const StyleBuiler = require('../style-builder'),
+            styleBuilerInst = new StyleBuiler(files);
+
+        styleBuilerInst.load();
+        styleBuilerInst.parse();
+        styleBuilerInst.build();
+        
     }
 }
 
