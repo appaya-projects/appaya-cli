@@ -153,12 +153,16 @@ class StyleBuilder {
 
     fillStyleFile(fileName, styleTypeDir, styleClasses) {
         let filePath = `${styleTypeDir}/${fileName}`,
-            fileContent = '';
+            fileContent = '',
+            isFirstLine = false,
+            contentFilled = false;
 
         if (fs.existsSync(filePath)) {
-            fileContent = fs.readFileSync(filePath, 'UTF-8');
+            fileContent = fs.readFileSync(filePath, 'UTF-8'); 
         } else {
             console.log(`'${fileName}' file created in '${styleTypeDir}'`);
+            isFirstLine = true;
+            contentFilled = true;
         }
 
         for (const styleClass of styleClasses) {
@@ -166,14 +170,22 @@ class StyleBuilder {
                 match = reg.exec(fileContent);
 
             if (!match) {
-                fs.appendFileSync(filePath, `\n.${styleClass} {\n  \n}\n`);
+                if(!isFirstLine) {
+                    fs.appendFileSync(filePath, `\n`);
+                }
+                fs.appendFileSync(filePath, `.${styleClass} {\n    \n}\n`);
 
                 console.log(`'.${styleClass}' added in '${filePath}'`);
+                isFirstLine = false;
+                contentFilled = true;
             }
-
         }
 
+        if(contentFilled) {
+            console.log(`\n`);
+        }
 
+        return contentFilled;
     }
 }
 

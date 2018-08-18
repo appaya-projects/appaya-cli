@@ -97,17 +97,7 @@ Command | Page | Wordpress template
 ### Example `appaya style-builder` usage:
 With `./src/index.html` file
 ```HTML
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-
-<body>
+// ...
   <main class="p-index__main">
     <h1 class="o-heading">My heading</h1>
     <form action="#" class="c-form">
@@ -120,13 +110,10 @@ With `./src/index.html` file
       <div class="c-form__group">
         // ...
       </div>
-
       <button class="o-btn">Send</button>
     </form>
   </main>
-</body>
-
-</html>
+// ...
 ```
 `appaya style-builder` will output:
 ```bash

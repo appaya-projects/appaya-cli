@@ -46,6 +46,9 @@ appaya watch
 ## Generowanie plików
 Appaya CLI posiada podstawowe komendy generujące pliki `.scss`, `.ts` itd.
 ```bash
+# stworzenie stylów na podstawie plików html/twig.
+appaya style-builder
+
 # tworzenie pliku '_my-component.scss', w folderze 'components' 
 # oraz dodanie jego importu w pliku '__components.scss'
 appaya style component "My Component"

@@ -41,9 +41,11 @@ function styleGenerator(type, name) {
 
     fs.appendFileSync(filePath + listFileName, `\n@import '${fileName}';`);
 
-    fs.writeFileSync(`${filePath}_${fileName}.scss`, `.${prefix}${fileName} {\n    \n}`);
+    fs.writeFileSync(`${filePath}_${fileName}.scss`, `.${prefix}${fileName} {\n    \n}\n`);
 
-    console.log(`\n '_${fileName}.scss' created in  '${filePath}'\n`)
+    console.log(`'_${fileName}'.scss file created in '${filePath}'`);
+    console.log(`'${prefix}${fileName}' added in  '${filePath}${fileName}.scss'`)
+    console.log(`\n`);
 }
 
 module.exports = styleGenerator;
