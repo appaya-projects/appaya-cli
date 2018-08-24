@@ -1,9 +1,9 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
 const PathResolver = require('../helpers/path-resolver');
 
 module.exports = {
-	entry: './src/page.js',
+	entry: [
+		'./src/page.js'
+	],
 	resolve: {
 		extensions: ['.ts', '.tsx', ".js", ".json"],
 		alias: {
@@ -15,7 +15,7 @@ module.exports = {
 			{ test: /\.ts?$/, use: "awesome-typescript-loader" },
 			{
 				test: /\.html$/,
-				loader: 'html-loader'
+				loader: 'html-loader?attrs[]=img:src&attrs[]=video:src&attrs[]=source:src'
 			},
 			{
 				test: /\.css$/, use: [
@@ -36,8 +36,5 @@ module.exports = {
 		modules: [PathResolver.cli('node_modules')],
 	},
 	plugins: [
-		new HtmlWebpackPlugin({
-			template: 'src/index.html'
-		})
 	]
 };

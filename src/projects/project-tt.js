@@ -23,12 +23,15 @@ class ProjectTT /*Project Timber-Theme*/ extends Project {
 
         switch (env) {
             case 'dev':
-                config.plugins = [
+                if(!config.plugins) {
+                    config.plugins = [];
+                }
+                config.plugins.push(
                     new BrowserSyncPlugin({
-                        proxy: this.settingsManager.settings.proxy,
+                        proxy: this.settingsManager.settings.config.proxy,
                         files: ['./*.php', './views/**/*.twig', './assets/**/*.*'],
                     }),
-                ]
+                );
                 break;
         }
 

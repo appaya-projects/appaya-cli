@@ -22,12 +22,12 @@ class Project {
 
     /*private*/ getConfig(env) {
         const config = {},
-            settings = this.settingsManager.settings;
+            projectConfig = this.settingsManager.settings.config;
 
-        config.entry = settings.entry;
-        if (settings.output) {
+        config.entry = projectConfig.entry;
+        if (projectConfig.output) {
             config.output = {};
-            config.output.path = path.resolve(settings.output);
+            config.output.path = path.resolve(projectConfig.output);
         }
 
 
@@ -52,7 +52,7 @@ class Project {
 
         // console.log(webpackConfig);
 
-        serve(argv, { config }).then((result) => { console.log(result) });
+        serve(argv, { config }).then((result) => {  });
     }
 
     watch() {
@@ -83,17 +83,7 @@ class Project {
     }
 
     styleBuilder() {
-        const files = filesInDir('./src/', '.html');
-        if (!files) {
-            return;
-        }
-        const StyleBuiler = require('../style-builder'),
-            styleBuilerInst = new StyleBuiler(files);
-
-        styleBuilerInst.load();
-        styleBuilerInst.parse();
-        styleBuilerInst.build();
-        
+                
     }
 
 }

@@ -11,7 +11,11 @@ module.exports = webpackMerge(commonConfig, {
 			{
 				test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
 				loader: 'file-loader?name=assets/[name].[ext]'
-			}
+			},
+			{
+				test: /\.(webm|mp4)$/,
+				loader: 'file-loader?name=assets/[name].[ext]'
+			},
 		]
 	},
 	serve: {
@@ -19,9 +23,17 @@ module.exports = webpackMerge(commonConfig, {
 		logLevel: 'error',
 		mode: ENV,
 		open: true,
-		dev: {
-			publicPath: "/",
+		hotClient: {
+			reload: true,
+			hmr: false,
 			logLevel: 'error'
+		},
+		devMiddleware: {
+			publicPath: "/",
+			logLevel: 'error',
+			hot: false,
+			inline: false,
+			index: "index"
 		}
 	}
 });
