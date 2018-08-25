@@ -32,8 +32,7 @@ module.exports = webpackMerge(commonConfig, {
 			publicPath: "/",
 			logLevel: 'error',
 			hot: false,
-			inline: false,
-			index: "index"
+			inline: false
 		}
 	}
 });

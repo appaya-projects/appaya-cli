@@ -14,7 +14,7 @@ class ProjectLB /*Project LP-Boilerplate*/ extends Project {
         for(const html of projectConfig["html-files"]) {
             config.plugins.push(
                 new HtmlWebpackPlugin({
-                    template: 'src/' + html + '.html',
+                    template: 'src/' + html,
                     filename: html
                 })
             );
@@ -24,7 +24,13 @@ class ProjectLB /*Project LP-Boilerplate*/ extends Project {
     }
 
     styleBuilder() {
-        const files = filesInDir('./src/', '.html');
+        const files = [],
+            projectConfig = this.settingsManager.settings.config;
+
+        for(const html of projectConfig["html-files"]) {
+            files.push('./src/' + html);
+        }
+
         if (!files) {
             return;
         }
